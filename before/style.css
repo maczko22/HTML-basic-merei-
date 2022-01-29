@@ -1,0 +1,133 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Quattrocento", serif;
+  font-size: 120%;
+  background: #181818;
+  color: #fff;
+  margin: 3%;
+}
+
+.box {
+  position: relative;
+  color: #fff;
+  font-size: 120%;
+  line-height: 1.6;
+  transition: all 0.5s;
+}
+.box .image {
+  position: relative;
+}
+.box .image img {
+  width: 100%;
+  display: block;
+}
+.box .image .title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2% 5%;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 150%;
+  font-family: "Oswald", sans-serif;
+}
+.box-content {
+  padding: 5%;
+}
+.box p {
+  margin: 0 0 2% 0;
+  transition: all 0.5s;
+}
+.box a {
+  color: #eec015;
+  text-decoration: none;
+  border-bottom: 1px dotted #eec015;
+  display: inline-block;
+  margin: 10px 0;
+  padding: 10px 0 0 0;
+}
+.box:hover a {
+  color: #fff;
+  border-color: transparent;
+  background: #000;
+  padding: 5px 30px;
+  transition: all 0.5s;
+}
+.box:hover a:hover {
+  color: #eec015;
+}
+.box:hover p {
+  color: #000;
+  transition: all 0.5s;
+}
+.box::before {
+  content: "";
+  width: 100%;
+  background: #eec015;
+  position: absolute;
+  top: 0;
+  bottom: 100%;
+  left: 0;
+  z-index: -1;
+  transition: all 0.5s;
+}
+.box:hover::before {
+  bottom: 0;
+  border-bottom: 10px solid #ee9f15;
+  transition: all 0.5s;
+}
+
+.col {
+  width: 50%;
+  float: left;
+  padding: 0 1.5% 0 0;
+}
+.col:nth-child(2n) {
+  padding: 0 0 0 1.5%;
+}
+.col:nth-child(2n) .box::before {
+  background: #53b3d7;
+}
+.col:nth-child(2n) .box:hover::before {
+  border-color: #378eae;
+}
+.col:nth-child(2n) .box:hover a {
+  background: #26677f;
+}
+.col:nth-child(2n) .box:hover a:hover {
+  background: #1c4c5e;
+  color: #fff;
+}
+
+.wrapper:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (max-width: 1200px) {
+  body {
+    font-size: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    margin: 0;
+  }
+  .col {
+    float: none;
+    width: 100%;
+    padding: 0;
+  }
+  .col:nth-child(2n) {
+    padding: 0;
+  }
+}
